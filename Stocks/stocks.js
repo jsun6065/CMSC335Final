@@ -11,7 +11,7 @@ process.stdin.setEncoding("utf8");
 const app = express();
 app.set("views", "./templates");
 app.set("view engine", "ejs");
-
+app.use(express.static("public"));
 
 import bodyParser from "body-parser";
 //let bodyParser = require("body-parser"); /* To handle post parameters */
@@ -51,7 +51,7 @@ async function lookUpStock(stockName) {
 }
 async function addStock(stockName, json) {
     json.name = stockName;
-    console.log(json);
+    //console.log(json);
     try {
         await client.connect();
         await insertStock(client, databaseAndCollection, json);
@@ -79,8 +79,8 @@ app.get("/", async (request, response) => {
             .find(filter);
 
         const result = await cursor.toArray();
-        console.log(`Found: ${result.length} stocks`);
-        console.log(result);
+        // console.log(`Found: ${result.length} stocks`);
+        // console.log(result);
         let table = "<table border='1'><tr><th>Stock</th><th>Price($)</th><th>Change Point</th><th>Change Percentage</th><th>Total Volume</th></tr>";
         result.forEach(ele => table += `<tr><td>${ele.name}</td><td>${ele.price}</td><td>${ele.change_point}</td><td>${ele.change_percentage}</td><td>${ele.total_vol}</td></tr>`);
         table += "</table>";
