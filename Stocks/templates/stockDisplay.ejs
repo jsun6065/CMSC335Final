@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Stocks</title>
+</head>
+
+<body>
+    <h1>Stocks</h1>
+
+    <div>
+        <%- stocks %>
+    </div>
+    <div>
+        <form action="/" method="post"><br>
+            <label>Enter a stock: </label>
+            <input type="text" name="stockName"><br>
+            <input type="submit" name="action" value="Submit">
+            <input type="submit" name="action" value="Clear Table">
+        </form>
+    </div>
+</body>

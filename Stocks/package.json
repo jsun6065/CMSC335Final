@@ -1,0 +1,24 @@
+{
+    "name": "stocks",
+    "version": "1.0.0",
+    "description": "",
+    "main": "stocks.js",
+    "type": "module",
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^16.0.0",
+        "ejs": "^3.1.7",
+        "express": "^4.17.3",
+        "http": "^0.0.1-security",
+        "mongodb": "^4.5.0",
+        "node-fetch": "^3.2.4",
+        "nodemon": "^2.0.15"
+    },
+    "engines": {
+        "node": "16.x"
+    },
+    "scripts": {
+        "start": "node stocks.js"
+    }
+}
